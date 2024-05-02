@@ -20,5 +20,9 @@ from mainapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('ecom/', views.ecommerce)
+    path('ecom/', views.ecommerce),
+    path('cart/',views.cart),
+    path('signuphandle/',views.signuphandle),
+    path('checkout/',views.checkout),
+    path('loginhandle/', views.loginhandle),
 ]
