@@ -1,0 +1,135 @@
+{% extends 'productapp/headerandfooter.html' %}
+{% block login %}
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'mainapp/style1.css' %}">
+    <style>
+        .order {
+            background-color: #ff523b;
+
+            float: right;
+            width: 350px;
+            height: 35px;
+            border: none;
+            border-radius: 18px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: black;
+
+
+
+        }
+
+        .order:hover {
+            cursor: pointer;
+            background-color: #bb6e64;
+
+        }
+
+
+
+
+        @media (min-width:100px) and (max-width:650px) {
+
+            .order {
+                width: 200px;
+            }
+        }
+
+        .cart-container {
+            display: flex;
+        }
+
+        .cart-item {
+            height: 500px;
+            width: 100%;
+            border: 2px solid black;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="cart-container">
+        <div class="cart-item">
+            <div class="small-conatiner cart-page">
+                <table>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                    </tr>
+                    {% for cart in showcart %}
+                    <tr>
+                        <td>
+                            <div class="cart-info">
+                                <img src="/media/{{cart.product.images}}" alt="">
+                                <div>
+                                    <p>{{cart.product.title}}</p>
+                                    <small>Price:{{cart.product.price}}</small>
+                                    <a href="/delete/{{cart.id}}/" type="submit">Remove</a>
+
+                                    <!-- <form action="/delete/{{cart.product.id}}/">
+                                        <input type="hidden" value="{{cart.product.id}}">
+                                        <button type="submit">Remove</button>
+                                    </form> -->
+                                </div>
+                            </div>
+                        </td>
+                        <td><input type="number" value="1"></td>
+                        <td>${{cart.product.price}}.00</td>
+                    </tr>
+                    {% endfor %}
+
+                </table>
+            </div>
+
+        </div>
+        <div class="cart-item">
+
+            <div class="small-conatiner cart-page">
+                 
+                <hr>
+                <div class="total_price">
+                    <table>
+
+                        <tr>
+                            <td>Subtoal</td>
+                            <td>${{amount}}</td>
+                        </tr>
+                        <tr>
+                            <td>Tax</td>
+                            <td>$70.00</td>
+                        </tr>
+                        <tr>
+                            <td>Toal</td>
+                            <td>${{total_amount}}</td>
+                        </tr>
+                    </table>
+                </div>
+
+
+                <div>
+                    <form action="/checkout/">
+
+                        <button class="order">Confirm Order</button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    
+</body>
+
+</html>
+{% endblock login %}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .footer {
+            background-color:rgb(31, 29, 29);
+            color: whitesmoke;
+            border: 2px solid black;
+            height: 400px;
+            margin-top:500px;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+        }
+
+        .box {
+
+            /* border: 2px solid whitesmoke; */
+            height: 300px;
+            width: 200px;
+            margin-top: 100px;
+            margin-left: 50px;
+            text-align: center;
+        }
+
+        @media (max-width:1386px) {
+            .container {
+
+                display: grid;
+
+                /* background-color: red; */
+            }
+
+            .box{
+                /* margin-left: 150px; */
+                /* width: 80vw; */
+                grid-column-start: 1;
+                grid-column-end: 4;
+            }
+
+            .footer{
+                height: 100%;
+            }
+
+            #box1{
+                width: 250px;
+            }
+
+        
+        }
+
+      
+
+        #box1{
+            width: 400px;
+        }
+
+        .box ul li{
+            list-style: none;
+            margin-right: 50px;
+            margin-top: 10px;
+            
+        }
+
+        #box1 img{
+            width: 200px;
+        }
+
+        #box1 h3{
+            font-size: 30px;
+        }
+
+        .box a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="footer">
+        <div class="container">
+            <div class="box" id="box1">
+                <h3>Download our App</h3>
+                <img src="downloadlogo.jpeg" alt="">
+                <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam laborum deleniti architecto iure minima amet itaque adipisci hic temporibus magni, tempora eum. Quam nobis est nesciunt, possimus blanditiis facilis obcaecati asperiores nostrum odio autem molestias reiciendis, dicta odit voluptatum nulla ad dolorum delectus porro esse ratione tenetur rem. Quam, voluptas! -->
+            </div>
+            <div class="box" id="box2">
+                <h3>Useful link</h3>
+                <ul>
+                    <a href=""><li>lorem1</li></a>
+                    <a href=""><li>lorem2</li></a>
+                    <a href=""><li>lorem3</li></a>
+                    <a href=""><li>lorem4</li></a>
+                </ul>
+            </div>
+            <div class="box" id="box3">
+                <h3>follow us</h3>
+                <ul>
+                    <a href=""><li>Instagram</li></a>
+                    <a href=""><li>Facebook</li></a>
+                    <a href=""><li>Twiter</li>
+                    <a href=""><li>Whatsapp</li></a>
+                </ul>
+            </div>
+            <div class="box" id="box4">
+                <h3>Section</h3>
+                <ul>
+                    <a href=""><li>Home</li></a>
+                    <a href=""><li>Features</li></a>
+                    <a href=""><li>Pricing</li></a>
+                    <a href=""><li>Faq</li></a>
+                </ul>
+            </div>
+        </div>
+
+
+    </div>
+</body>
+
+</html>
