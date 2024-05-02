@@ -22,7 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('ecom/', views.ecommerce),
     path('cart/',views.cart),
-    path('signuphandle/',views.signuphandle),
+    path('Signup/',views.signuphandle),
     path('checkout/',views.checkout),
-    path('loginhandle/', views.loginhandle),
+    path('login/', views.loginhandle),
+    path('productdescription/', views.productdescription)
 ]

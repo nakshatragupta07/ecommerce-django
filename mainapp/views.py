@@ -16,3 +16,6 @@ def checkout(request):
 
 def cart(request):
     return render(request,'cart.html')
+
+def productdescription(request):
+    return render(request,'productdescription.html')
