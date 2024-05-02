@@ -1,4 +1,7 @@
+{% extends "header_footer.html" %}
+{% block cart %}
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
       
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="{% static 'css/style1.css'%}">
 </head>
 <body>
     <div class="small-conatiner cart-page">
@@ -77,9 +80,14 @@
                 <tr>
                     <td>Toal</td>
                     <td>$200.00</td>
+                    <td>
+                        <a href="/checkout/">Confirm Order</a>
+                    </td>
+                    
                 </tr>
             </table>
         </div>
     </div>
 </body>
 </html>
+{% endblock cart %}

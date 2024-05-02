@@ -1,4 +1,8 @@
+{% extends "header_footer.html" %}
+{% block productdescription %}
+
 <!doctype html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -82,9 +86,10 @@
             <h4>Rs.500<small class="fw-light text-decoration-line-through">15999</small></h4> <br>
 
             
-            <form action="/auth/login/"class="d-inline" method="post">
+            <form action="/cart/"class="d-inline" method="post">
+              {% csrf_token %}
               <input type="hidden" name="prod_id" value="{{a.id}}" id="prod_id">
-              <button type="submit" class="btn btn-primary shadow px-5 py-2 cart-color">Add to Cart</button>
+              <button type="submit" class="btn btn-primary shadow px-5 py-2 cart-color" href="/cart/">>Add to Cart</button>
             </form>
 
             <a href="" class="btn btn-danger shadow px-5 py-2 ms-4">Buy Now</a>
@@ -104,9 +109,6 @@
      
   </body>
 </html>
- 
 
 
-=
-
-
+{% endblock productdescription %}
