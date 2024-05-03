@@ -30,5 +30,6 @@ urlpatterns = [
     path('productdescription/<int:id>/', views.productdescription),
     path('men/', views.men),
     path('women/', views.women),
+    path('logout/',views.logouthandle)
 
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

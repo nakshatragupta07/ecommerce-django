@@ -17,9 +17,12 @@ def loginhandle(request):
         if user is not None:
          login(request,user)
          return redirect('/')
-     
-
      return render(request,'login.html')
+
+def logouthandle(request):
+    logout(request)
+    return redirect('/')
+
 
 def signuphandle(request):
     if request.method == "POST":

@@ -36,17 +36,31 @@
                         </li>
                         <li><a href="">About</a></li>
                         <li><a href="">Contact</a></li>
+                        {% if user.is_authenticated %}
+                        <li class="dropdown">
+                            <span>Profile</span>
+                            <div class="dropdown-content">
+                              <a href="/profile"> Profile </a>
+                              <a href="/logout/"> Logout </a>
+                            </div>
+                        </li>
+                        {% else %}
                         <li class="dropdown">
                             <span>Account</span>
                             <div class="dropdown-content">
                               <a href="/login/"> Login </a>
                               <a href="/Signup/"> Signup </a>
+                             
                             </div>
                         </li>
+                        {% endif %}
                     </ul>
                 </nav>
+                {% if user.is_authenticated %}
                 <i class="fa-solid fa-cart-shopping cart"></i>
-                <i class="fa-solid fa-bars menu"></i>
+                <p>Welcome {{request.user}}</p>
+                {% endif %}
+                {% comment %} <i class="fa-solid fa-bars menu"></i> {% endcomment %}
             </div>
             <div class="row" id="row">
                 <div class="col-2" style="font-family: cursive;">
