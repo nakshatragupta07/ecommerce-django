@@ -75,15 +75,16 @@
   <body>
     
       <div class="container my-5">
+        {% for i in data %}
           <div class="row">
            <div class="col-sm-6 text-center align-self-center">
-            <img src="{% static 'images/boyjeans4.webp'%}" alt="" class="img-fluid img-thumbnail">
+            <img src="/media/{{i.image}}" alt="" class="img-fluid img-thumbnail">
            </div>
            <div class="col-sm-5 offset-sm-1">
-            <h2>Jeans<p id="color-title" style="display:inline-block;"></p></h2>
+            <h2>{{i.title}}<p id="color-title" style="display:inline-block;"></p></h2>
             <hr>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia nam odit, eaque at placeat dolores iusto quidem commodi nisi aut, aspernatur quo voluptas sit illum repellat nostrum! Sed quod voluptatem libero reprehenderit vitae consequatur debitis vero exercitationem quaerat ipsum alias vel porro aspernatur quos tempore eligendi enim, veniam .</p> <br>
-            <h4>Rs.500<small class="fw-light text-decoration-line-through">15999</small></h4> <br>
+            <p>{{i.description}}</p> <br>
+            <h4>Rs.{{i.price}}<small class="fw-light text-decoration-line-through">15999</small></h4> <br>
 
             
             <form action="/cart/"class="d-inline" method="post">
@@ -102,6 +103,7 @@
             </ul>
            </div>
           </div>
+        {% endfor %}
          </div>
 
 

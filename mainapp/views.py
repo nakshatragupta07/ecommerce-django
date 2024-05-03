@@ -18,8 +18,14 @@ def checkout(request):
 def cart(request):
     return render(request,'cart.html')
 
-def productdescription(request):
-    return render(request,'productdescription.html')
+def productdescription(request,id):
+    get_data = Product.objects.filter(id=id)
+    context = {
+
+        'data':get_data
+    }
+    print(get_data)
+    return render(request,'productdescription.html',context)
 
 # def men(request):
 #     data = Product.objects.all()
