@@ -24,6 +24,7 @@
           <h3 style="color:#12258f;text-align: center;" class = "text-light">Login</h3>
           <hr class = "text-light">
           <form action="" method="post" novalidate class="shadow p-5 bg-light rounded">
+            {% csrf_token %}
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Username</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" placeholder="username" name="username">
@@ -37,7 +38,9 @@
            <br>
            <div class="text-center text-primary fw-bold"><small style="color: #12258f;">New to ShoppinglyX ? <a href="/create-account/"
               class="text-dark">Create an Account</a> </small></div>
-          </form>
+            
+            </form>
+            
          </div>
         </div>
        </div>

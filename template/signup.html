@@ -72,23 +72,27 @@
 <body>
     <div class="container">
         <h2>Signup</h2>
-        <form action="/get_data/" method="POST">
+        {% if messages %}
+        {% for i in messages %}
+        <div class="alert alert-primary" role="alert">
+            {{i}}
+          </div>
+        {% endfor %}
+        {% endif %}
+        <form action="" method="POST">
             {% csrf_token %}
             <div class="form-group">
-                <label for="name">firstname:</label>
-                <input type="text" id="name" name="firstname" required>
-            </div>
-            <div class="form-group">
-                <label for="name">lastname:</label>
-                <input type="text" id="name" name="lastname" required>
-            </div>
-            <div class="form-group">
-                <label for="name">country:</label>
-                <input type="text" id="name" name="country" required>
+
+                <label for="name">username:</label>
+                <input type="text" id="name" name="username" required>
             </div>
             <div class="form-group">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="name">password:</label>
+                <input type="text" id="name" name="password" required>
             </div>
             <button type="submit">submit</button>
         </form>
